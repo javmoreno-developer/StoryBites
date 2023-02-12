@@ -12,6 +12,13 @@
     <string name="login_toUp">¿No tienes una cuenta?</string>
     <string name="login_toIn">¿Tienes una cuenta?</string>
     <string name="goal_title">Escoge los temas</string>
+    <string name="tut_first_title">¿Que es Story Bites?</string>
+    <string name="tut_first_msg">Story bites es una app con la que leer y escribir breves historias</string>
+    <string name="tut_second_title">¿Que puedo hacer con Story Bites?</string>
+    <string name="tut_second_msg">Con Story Bites podrás leer y escribir breves historias</string>
+    <string name="tut_third_title">¿Como puedo empezar?</string>
+    <string name="tut_third_msg">Puedes empezar elegiendo tus gustos</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

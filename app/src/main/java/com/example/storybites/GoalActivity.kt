@@ -7,9 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.LinearLayout
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.storybites.adapter.GoalAdapter
+import com.example.storybites.adapters.GoalAdapter
 import com.example.storybites.databinding.ActivityGoalBinding
 import com.example.storybites.objects.Goal
 import com.google.android.material.snackbar.Snackbar

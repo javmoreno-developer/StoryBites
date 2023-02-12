@@ -1,6 +1,5 @@
-package com.example.storybites.adapter
+package com.example.storybites.adapters
 
-import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.util.Log
@@ -8,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.storybites.R
 import com.example.storybites.databinding.GoalBinding
 import com.example.storybites.objects.Goal
 import kotlin.random.Random
