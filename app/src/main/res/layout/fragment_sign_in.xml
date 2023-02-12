@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".LoginActivity">
+    tools:context=".BeginActivity">
 
     <ImageView
         android:id="@+id/login_img"
@@ -21,7 +21,7 @@
         android:id="@+id/title_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/signUp_msg"
+        android:text="@string/login_msg"
         android:textColor="@color/white"
         android:fontFamily="@font/source_sans_pro"
         android:textSize="30sp"
@@ -31,43 +31,18 @@
         app:layout_constraintTop_toBottomOf="@+id/login_img" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/name_login_TextField"
+        android:id="@+id/user_login_TextField"
         style="@style/ThemeOverlay.App.TextInputLayout"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="@string/login_nick"
+        android:layout_marginTop="30dp"
+        android:hint="@string/login_user"
         android:textColorHint="@color/gray"
         android:background="@drawable/underline_txt"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_login"
-        app:boxStrokeColor="@drawable/input"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/name_login_TextInput"
-            android:layout_width="match_parent"
-            android:textColor="@color/gray"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/user_login_TextField"
-        style="@style/ThemeOverlay.App.TextInputLayout"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="@string/login_user"
-        android:textColorHint="@color/gray"
-        android:background="@drawable/underline_txt"
-        android:textColor="@color/gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_login_TextField"
         app:boxStrokeColor="@drawable/input"
         >
 
@@ -79,12 +54,13 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/pass_login_TextField"
         style="@style/ThemeOverlay.App.TextInputLayout"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:hint="@string/login_pass"
         android:textColorHint="@color/gray"
         android:background="@drawable/underline_txt"
@@ -103,9 +79,8 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <Button
-        android:id="@+id/btn_getRegister"
+        android:id="@+id/btn_getStarted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_btn"
@@ -120,7 +95,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_outSignUp"
+        android:id="@+id/btn_toSignUp"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginBottom="10dp"
@@ -128,11 +103,11 @@
         android:background="@drawable/underline_txt"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:text="@string/login_toIn"
+        android:text="@string/login_toUp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:fontFamily="@font/source_sans_pro"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_getRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_getStarted" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
