@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ThemeOverlay.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="colorPrimary">@color/gray</item>
+        <item name="colorOnSurface">@color/red</item>
+        <item name="colorError">@color/red</item>
+        <item name="boxStrokeColor">@color/gray</item>
+        <item name="boxStrokeWidth">0dp</item>
+    </style>
+</resources>

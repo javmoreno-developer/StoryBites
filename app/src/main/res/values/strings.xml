@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">STORY BITES</string>
+    <string name="intro_subtitle">Un lugar para las historias breves</string>
+    <string name="intro_btnStarted">Empezar</string>
+    <string name="intro_tutorial">Tutorial</string>
+    <string name="login_user">Email</string>
+    <string name="login_pass">Contraseña</string>
+    <string name="login_nick">Nombre</string>
+    <string name="login_btn">Registrarse</string>
+    <string name="login_msg">Sign in</string>
+    <string name="signUp_msg">Sign up</string>
+    <string name="login_toUp">¿No tienes una cuenta?</string>
+    <string name="login_toIn">¿Tienes una cuenta?</string>
+    <string name="goal_title">Escoge los temas</string>
+</resources>

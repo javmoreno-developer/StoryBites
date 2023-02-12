@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "933595755599",
+    "project_id": "story-bites",
+    "storage_bucket": "story-bites.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933595755599:android:e7d4aaab83d3178a85e63a",
+        "android_client_info": {
+          "package_name": "com.example.storybites"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933595755599-9en7kqvi0429djc6gmlkq13gfavn2p7v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.storybites",
+            "certificate_hash": "749866bbee37356ec1c2dde2177ac3915cd11433"
+          }
+        },
+        {
+          "client_id": "933595755599-3kqidoocb7sqojvpqlbdhv61eueg1o3d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD18VK975kerYNXz0a56yv8wJbqQMLzB3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933595755599-3kqidoocb7sqojvpqlbdhv61eueg1o3d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
