@@ -1,5 +1,6 @@
 package com.example.storybites.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import com.example.storybites.MainActivity
 import com.example.storybites.R
 import com.example.storybites.databinding.FragmentSignInBinding
 import com.example.storybites.objects.User
@@ -36,6 +38,7 @@ class SignInFragment : Fragment() {
         super.onResume()
         val args = SignInFragmentArgs.fromBundle(requireArguments())
 
+
         Log.i("XXX",args.user.toString());
 
         // Cambiamos los input
@@ -61,7 +64,12 @@ class SignInFragment : Fragment() {
                     .signInWithEmailAndPassword(email,pass)
                     .addOnSuccessListener {
                        // volvemos al fragmento original
-                        findNavController().navigate(R.id.action_signInFragment_to_introFragment)
+                        //findNavController().navigate(R.id.action_signInFragment_to_introFragment)
+                        val i = Intent(binding.root.context,MainActivity::class.java);
+                        startActivity(i)
+                    }
+                    .addOnFailureListener {
+                        Log.i("XXXv1",it.toString())
                     }
             }
         }

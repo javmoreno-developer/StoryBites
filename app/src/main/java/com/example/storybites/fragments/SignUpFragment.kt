@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.storybites.R
 import com.example.storybites.databinding.FragmentSignInBinding
 import com.example.storybites.databinding.FragmentSignUpBinding
+import com.example.storybites.objects.Goal
 import com.example.storybites.objects.User
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -37,6 +39,8 @@ class SignUpFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+
+
         // Navegar al sign in fragment
         binding.btnOutSignUp.setOnClickListener {
             findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToSignInFragment(null))
@@ -53,29 +57,50 @@ class SignUpFragment : Fragment() {
                 var name = nameLoginTextInput.text.toString()
                 Log.i("XXX","registrar pulsado")
 
-                var user: User = User(name,email, pass)
+                var user: User = User("",name,email, pass,null)
 
                 Firebase.auth.createUserWithEmailAndPassword(email,pass)
                     .addOnSuccessListener {
+                        val userCreated = FirebaseAuth.getInstance().currentUser
+                        val uid = userCreated?.uid
+                        user.uid = uid!!
 
+                        userCreated?.getIdToken(true)
+                            ?.addOnSuccessListener {
+
+                                val idToken = it.token
+
+                                if (uid != null && idToken != null) {
+                                    db.collection("user").document(uid).set(
+                                        hashUser(name, email, uid, idToken, mutableListOf())
+                                    )
+                                    findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToSignInFragment(user))
+                                }
+                            }
                     }
                     .addOnFailureListener {
                         Log.i("AAA","Failure")
                     }
-                db.collection("users").add(user)
-                    .addOnSuccessListener {
-                        // volvemos al sign in
-                        //findNavController().navigate(R.id.action_signUpFragment_to_signInFragment("user"))
-                        findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToSignInFragment(user))
-                    }
-                    .addOnFailureListener {
-                        Log.i("AAA","Failure2")
-                    }
+                Log.i("XXX2",user.uid)
+
             }
 
         }
 
     }
+
+    private fun hashUser(name: String, email: String, uid: String, idToken: String,goals: MutableList<Goal>): Map<String, Any> {
+        return hashMapOf(
+            "name" to name,
+            "email" to email,
+            "picture" to "",
+            "uid" to uid,
+            "token" to idToken,
+            "goals" to goals,
+            "provider" to "firebase",
+        )
+    }
+
 
 
 }

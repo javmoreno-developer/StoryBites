@@ -1,22 +1,20 @@
 package com.example.storybites.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
-import com.example.storybites.GoalActivity
 import com.example.storybites.R
-import com.example.storybites.databinding.FragmentTutorialThirdBinding
+import com.example.storybites.databinding.FragmentReadBinding
 
 
-class TutorialThirdFragment : Fragment() {
+class ReadFragment : Fragment() {
 
-    private lateinit var binding: FragmentTutorialThirdBinding
+private lateinit var binding: FragmentReadBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
@@ -24,15 +22,18 @@ class TutorialThirdFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentTutorialThirdBinding.inflate(inflater,container,false)
+        binding = FragmentReadBinding.inflate(inflater,container,false)
         return binding.root
     }
 
     override fun onResume() {
         super.onResume()
-        binding.btnGetStarted.setOnClickListener {
-            val i = Intent(it.context,GoalActivity::class.java)
-            startActivity(i)
+        val args = ReadFragmentArgs.fromBundle(requireArguments())
+        val book = args.book
+
+        // sobrescribimos los datos
+        with(binding) {
+            editCore.setText(book?.content ?: "")
         }
     }
 

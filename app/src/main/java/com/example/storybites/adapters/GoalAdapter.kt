@@ -41,7 +41,6 @@ class GoalAdapter(val lista: MutableList<Goal>): Adapter<GoalAdapter.GoalViewHol
                 btnGoal.setOnClickListener {
                     onItemClickListener(adapterPosition)
                     //btnGoal.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#009FFD"))
-                    Log.i("XXX",btnGoal.backgroundTintList.toString());
                     if(btnGoal.backgroundTintList == null) {
                         btnGoal.backgroundTintList = ColorStateList.valueOf(Color.parseColor(color))
                     } else {

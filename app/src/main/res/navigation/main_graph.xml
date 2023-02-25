@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.storybites.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailBookFragment"
+            app:destination="@id/detailBookFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_coreFragment"
+            app:destination="@id/coreFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.storybites.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/detailBookFragment"
+        android:name="com.example.storybites.fragments.DetailBookFragment"
+        android:label="fragment_detail_book"
+        tools:layout="@layout/fragment_detail_book">
+    <argument
+        android:name="book"
+        app:argType="com.example.storybites.objects.Book"
+        app:nullable="true" />
+        <action
+            android:id="@+id/action_detailBookFragment_to_readFragment"
+            app:destination="@id/readFragment" />
+        <action
+            android:id="@+id/action_detailBookFragment_to_coreFragment"
+            app:destination="@id/coreFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/coreFragment"
+        android:name="com.example.storybites.fragments.CoreFragment"
+        android:label="fragment_core"
+        tools:layout="@layout/fragment_core" >
+        <argument
+            android:name="book"
+            app:argType="com.example.storybites.objects.Book"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/readFragment"
+        android:name="com.example.storybites.fragments.ReadFragment"
+        android:label="fragment_read"
+        tools:layout="@layout/fragment_read" >
+        <argument
+            android:name="book"
+            app:argType="com.example.storybites.objects.Book"
+            app:nullable="true" />
+    </fragment>
+</navigation>

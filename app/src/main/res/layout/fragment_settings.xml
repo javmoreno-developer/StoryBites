@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".fragments.SettingsFragment">
+
+    <ImageView
+        android:id="@+id/imageSettings"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/account_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/titleSettings"
+        android:layout_width="wrap_content"
+        android:text="@string/menu_settings"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageSettings"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_settings_TextField"
+        style="@style/ThemeOverlay.App.TextInputLayout"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/login_nick"
+        android:textColorHint="@color/gray"
+        android:background="@drawable/underline_txt"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleSettings"
+        app:boxStrokeColor="@drawable/input"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_settings_TextInput"
+            android:layout_width="match_parent"
+            android:textColor="@color/gray"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_settings_TextField"
+        style="@style/ThemeOverlay.App.TextInputLayout"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/login_user"
+        android:textColorHint="@color/gray"
+        android:background="@drawable/underline_txt"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_settings_TextField"
+        app:boxStrokeColor="@drawable/input"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/user_settings_TextInput"
+            android:layout_width="match_parent"
+            android:textColor="@color/gray"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pass_settings_TextField"
+        style="@style/ThemeOverlay.App.TextInputLayout"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/login_pass"
+        android:textColorHint="@color/gray"
+        android:background="@drawable/underline_txt"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_settings_TextField"
+        app:boxStrokeColor="@drawable/input"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass_settings_TextInput"
+            android:layout_width="match_parent"
+            android:textColor="@color/gray"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btn_account"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+
+        android:background="@drawable/underline_txt"
+
+        android:text="@string/settings_btn_account"
+        app:layout_constraintTop_toBottomOf="@+id/pass_settings_TextField"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/source_sans_pro"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+    <Button
+        android:id="@+id/btn_act_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/corner_btn"
+        android:fontFamily="@font/source_sans_pro"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/settings_btn_act"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_account" />
+
+    <Button
+        android:id="@+id/btn_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/corner_btn"
+        android:fontFamily="@font/source_sans_pro"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+
+        android:layout_marginTop="20dp"
+        android:text="@string/settings_btn_goals"
+
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_act_info" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

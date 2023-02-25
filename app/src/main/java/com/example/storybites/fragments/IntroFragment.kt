@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.storybites.MainActivity
 import com.example.storybites.R
 import com.example.storybites.TutorialActivity
 import com.example.storybites.databinding.FragmentIntroBinding
@@ -35,7 +36,8 @@ class IntroFragment : Fragment() {
         // vamos al fragmento sign in
         binding.btnGetStarted.setOnClickListener {
             findNavController().navigate(IntroFragmentDirections.actionIntroFragmentToSignInFragment(null))
-            // findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToSignInFragment(user))
+            /*val i = Intent(it.rootView.context,MainActivity::class.java);
+            startActivity(i)*/
         }
 
         // vamos al tutorial

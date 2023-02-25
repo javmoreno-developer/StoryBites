@@ -25,6 +25,9 @@ class TutorialActivity : AppCompatActivity() {
         binding = ActivityTutorialBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
         fragments.add(TutorialFirstFragment())
         fragments.add(TutorialSecondFragment())
         fragments.add(TutorialThirdFragment())

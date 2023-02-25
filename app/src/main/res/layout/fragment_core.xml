@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".fragments.CoreFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/done_btn"
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+
+            android:layout_height="wrap_content"
+            android:src="@drawable/done"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/imageCore"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@color/gray"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/done_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/desc_TextField"
+            style="@style/ThemeOverlay.App.TextInputLayout"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/underline_txt"
+            android:hint="Decripcion"
+            android:textColorHint="@color/gray"
+
+            app:boxStrokeColor="@drawable/input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageCore">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/desc_TextInput"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dur_TextField"
+            style="@style/ThemeOverlay.App.TextInputLayout"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/underline_txt"
+            android:hint="Duracion (min)"
+            android:textColorHint="@color/gray"
+
+            app:boxStrokeColor="@drawable/input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/desc_TextField">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dur_TextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/title_TextField"
+            style="@style/ThemeOverlay.App.TextInputLayout"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/underline_txt"
+            android:hint="Titulo"
+            android:textColorHint="@color/gray"
+
+            app:boxStrokeColor="@drawable/input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dur_TextField">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/title_TextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/goal_TextField"
+            style="@style/ThemeOverlay.App.TextInputLayout"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/underline_txt"
+            android:hint="Goal"
+            android:textColorHint="@color/gray"
+
+            app:boxStrokeColor="@drawable/input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_TextField">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/goal_TextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/content_TextField"
+            style="@style/ThemeOverlay.App.TextInputLayout"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/underline_txt"
+            android:hint="Content"
+            android:textColorHint="@color/gray"
+
+            app:boxStrokeColor="@drawable/input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/goal_TextField">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/content_TextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+        <!-- <EditText
+             android:id="@+id/editCore"
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             android:layout_marginTop="20dp"
+             android:background="@null"
+             android:gravity="top|start"
+             android:hint="EditText ancho completo"
+             android:lines="10"
+             android:padding="16dp"
+             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/imageCore" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

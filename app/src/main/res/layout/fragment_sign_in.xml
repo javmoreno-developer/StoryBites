@@ -25,6 +25,7 @@
         android:textColor="@color/white"
         android:fontFamily="@font/source_sans_pro"
         android:textSize="30sp"
+
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +50,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/user_login_TextInput"
             android:layout_width="match_parent"
+            android:text="javmoreno766@gmail.com"
             android:textColor="@color/gray"
             android:layout_height="wrap_content" />
 
@@ -75,6 +77,7 @@
             android:id="@+id/pass_login_TextInput"
             android:layout_width="match_parent"
             android:textColor="@color/gray"
+            android:text="javi1234"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>

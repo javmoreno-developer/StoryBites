@@ -50,10 +50,11 @@ class GoalActivity : AppCompatActivity() {
                 for(documento in resultado) {
                     Log.i("Datos: ","${documento.data}")
                    // lista.add(element = documento as Goal)
-                    var goal: Goal = Goal("","");
+                    var goal: Goal = Goal("","","");
                     goal.apply {
                         title = documento.data.get("title").toString()
                         desc = documento.data.get("desc").toString()
+                        gid = documento.data.get("gid").toString()
                     }
                     lista.add(goal);
                 }
@@ -85,7 +86,7 @@ class GoalActivity : AppCompatActivity() {
     }
 
     fun goalClick(param: Int) {
-        Snackbar.make(binding.root,"Has pulsado ${param}",Snackbar.LENGTH_LONG).show()
+        Snackbar.make(binding.root,"Has pulsado ${lista[param].gid}",Snackbar.LENGTH_LONG).show()
         if(contadorDone.indexOf(param) == -1) {
             contadorDone.add(param)
         } else {

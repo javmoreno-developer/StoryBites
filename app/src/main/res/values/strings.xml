@@ -18,6 +18,14 @@
     <string name="tut_second_msg">Con Story Bites podrás leer y escribir breves historias</string>
     <string name="tut_third_title">¿Como puedo empezar?</string>
     <string name="tut_third_msg">Puedes empezar elegiendo tus gustos</string>
+    <string name="main_fragment_greeting">Bienvenido %s</string>
+    <string name="main_fragment_books_msg">Libros que quizás te interesen</string>
+    <string name="menu_settings">Ajustes</string>
+    <string name="menu_home">Home</string>
+    <string name="settings_btn_act">Actualizar info</string>
+    <string name="settings_btn_goals">Cambiar gustos</string>
+    <string name="settings_btn_account">Eliminar cuenta</string>
+    <string name="detail_btn">Quiero leerlo</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
