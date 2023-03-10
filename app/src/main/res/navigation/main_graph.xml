@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_detailBookFragment_to_coreFragment"
             app:destination="@id/coreFragment" />
+        <action
+            android:id="@+id/action_detailBookFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
 
     </fragment>
     <fragment
@@ -49,6 +52,9 @@
             android:name="book"
             app:argType="com.example.storybites.objects.Book"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_coreFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/readFragment"
@@ -59,5 +65,9 @@
             android:name="book"
             app:argType="com.example.storybites.objects.Book"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_readFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
+
 </navigation>

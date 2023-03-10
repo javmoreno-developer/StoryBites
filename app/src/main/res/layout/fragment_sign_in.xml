@@ -50,7 +50,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/user_login_TextInput"
             android:layout_width="match_parent"
-            android:text="javmoreno766@gmail.com"
             android:textColor="@color/gray"
             android:layout_height="wrap_content" />
 
@@ -76,8 +75,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pass_login_TextInput"
             android:layout_width="match_parent"
+            android:inputType="textPassword"
             android:textColor="@color/gray"
-            android:text="javi1234"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -97,6 +96,18 @@
 
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Spinner -->
+    <ProgressBar
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/btn_getStarted"
+        app:layout_constraintEnd_toEndOf="@id/btn_getStarted"
+        app:layout_constraintTop_toTopOf="@id/btn_getStarted"
+        app:layout_constraintBottom_toBottomOf="@id/btn_getStarted"
+        style="?android:attr/progressBarStyleSmall"/>
+
     <Button
         android:id="@+id/btn_toSignUp"
         android:layout_width="wrap_content"
@@ -112,5 +123,7 @@
         android:fontFamily="@font/source_sans_pro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_getStarted" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

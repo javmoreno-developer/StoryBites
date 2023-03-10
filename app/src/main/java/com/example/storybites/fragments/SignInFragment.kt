@@ -2,23 +2,26 @@ package com.example.storybites.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import com.example.storybites.GoalActivity
 import com.example.storybites.MainActivity
 import com.example.storybites.R
 import com.example.storybites.databinding.FragmentSignInBinding
 import com.example.storybites.objects.User
+import com.google.android.material.snackbar.Snackbar
+
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 
 class SignInFragment : Fragment() {
     private lateinit var binding: FragmentSignInBinding
+    private var newby: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +42,14 @@ class SignInFragment : Fragment() {
         val args = SignInFragmentArgs.fromBundle(requireArguments())
 
 
-        Log.i("XXX",args.user.toString());
+
 
         // Cambiamos los input
         if(args.user != null) {
             with(binding) {
                 userLoginTextInput.setText(args.user!!.email)
                 passLoginTextInput.setText(args.user!!.pass)
+                newby = true
             }
         }
         // Navegar al sign up fragment
@@ -60,39 +64,35 @@ class SignInFragment : Fragment() {
             btnGetStarted.setOnClickListener {
                 var email = userLoginTextInput.text.toString()
                 var pass = passLoginTextInput.text.toString()
+
+                it.isEnabled = false
                 Firebase.auth
                     .signInWithEmailAndPassword(email,pass)
                     .addOnSuccessListener {
                        // volvemos al fragmento original
                         //findNavController().navigate(R.id.action_signInFragment_to_introFragment)
-                        val i = Intent(binding.root.context,MainActivity::class.java);
-                        startActivity(i)
+
+                        if (!newby) {
+                            val i = Intent(binding.root.context, MainActivity::class.java);
+                            startActivity(i)
+                        } else {
+                            val i = Intent(binding.root.context, GoalActivity::class.java);
+                            i.putExtra("act",false)
+                            startActivity(i)
+                            binding.btnGetStarted.isEnabled = true
+                        }
                     }
                     .addOnFailureListener {
-                        Log.i("XXXv1",it.toString())
+                        Snackbar.make(binding.root,"Fallo en el registro", Snackbar.LENGTH_LONG).show()
+                        binding.btnGetStarted.isEnabled = true
                     }
+
             }
         }
     }
-    private fun registerOp(respuesta : androidx.activity.result.ActivityResult) {
-        val mensaje = when(respuesta.resultCode) {
-            AppCompatActivity.RESULT_OK -> "Se ha registrado el usuario"
-            AppCompatActivity.RESULT_CANCELED -> "No se ha registrado el usuario"
-            else -> ""
-        }
 
 
 
-        if(respuesta.resultCode == AppCompatActivity.RESULT_OK) {
-            val usuario = respuesta.data?.extras?.get("_usuario") as User
 
-            with(binding) {
-                userLoginTextInput.setText(usuario.email.toString())
-                passLoginTextInput.setText(usuario.pass.toString())
-            }
-        }
-
-
-    }
 
 }

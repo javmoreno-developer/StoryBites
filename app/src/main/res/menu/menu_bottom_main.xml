@@ -2,12 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/mainFragment"
-        android:title="@string/menu_home"
-        />
+        android:icon="@drawable/home"
+
+        android:title="" />
     <item
         android:id="@+id/settingsFragment"
-        android:title="@string/menu_settings"
-        />
+        android:icon="@drawable/settings"
+
+        android:title="" />
+
+
+
 
 
 

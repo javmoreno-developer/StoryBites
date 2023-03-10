@@ -1,22 +1,33 @@
 package com.example.storybites.fragments
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.example.storybites.BeginActivity
+import com.example.storybites.GoalActivity
 import com.example.storybites.R
 import com.example.storybites.databinding.FragmentSettingsBinding
 import com.example.storybites.objects.User
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import java.io.File
+import java.util.HashMap
 
 
 class SettingsFragment : Fragment() {
+    private val File = 1
     private lateinit var binding: FragmentSettingsBinding
     private lateinit var db: FirebaseFirestore
+    private var urlPhoto: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +46,8 @@ class SettingsFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         db = FirebaseFirestore.getInstance()
+
+
         var uid = "";
         // obtenemos el usuario logueado
         val currentUser = Firebase.auth.currentUser
@@ -52,7 +65,6 @@ class SettingsFragment : Fragment() {
                         var email = it.get("email") as String
                         var name = it.get("name") as String
 
-
                         with(binding) {
                             nameSettingsTextInput.setText(name)
                             userSettingsTextInput.setText(email)
@@ -65,39 +77,83 @@ class SettingsFragment : Fragment() {
                     }
                 }
                 .addOnFailureListener {
-                    Log.i("XXX","Error en la lectura del documento del usuario logueado")
+                    Snackbar.make(binding.root,"Error en la lectura del documento del usuario logueado",Snackbar.LENGTH_LONG).show()
                 }
         }
 
         with(binding) {
+            // borrar cuenta
+            btnAccount.setOnClickListener {
+
+                //Firebase.auth.signOut()
+
+                val user = Firebase.auth.currentUser!!
+                var uid = user.uid
+
+                // borramos del servicio de autenticacion
+                user.delete()
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            // borramos el registro de la coleccion
+                            db.collection("user").document(uid).delete()
+                                .addOnSuccessListener {
+                                // redirigimos al login
+                                activity?.finish()
+                                return@addOnSuccessListener
+                            }
+                        }
+                    }
+
+            }
+
             btnActInfo.setOnClickListener {
                 var email = userSettingsTextInput.text.toString()
                 var name = nameSettingsTextInput.text.toString()
                 var pass = passSettingsTextInput.text.toString()
 
-                Log.i("XXX",email)
-                Log.i("XXX",name)
-                Log.i("XXX",pass)
+                if(!pass.isNullOrEmpty() && !email.isNullOrEmpty() && !name.isNullOrEmpty()) {
 
-                var map = mutableMapOf<String,Any>()
-                map.set("email",email)
-                map.set("name",name)
-                //map.set("pass",pass)
-                // actualizamos email y nombre de usuario
-                db.collection("user").document(uid).update(map)
-                    .addOnSuccessListener {
-                        // actualizamos la pass del user y el email (firebase auth)
-                        currentUser?.updateEmail(email)
-                        currentUser?.updatePassword(pass)
-                    }
+                    var map = mutableMapOf<String, Any>()
+                    map.set("email", email)
+                    map.set("name", name)
+                    map.set("picture", urlPhoto)
+
+                    it.isEnabled = false
+                    //map.set("pass",pass)
+                    // actualizamos email y nombre de usuario
+                    db.collection("user").document(uid).update(map)
+                        .addOnSuccessListener {
+                            // actualizamos la pass del user y el email (firebase auth)
+                            currentUser?.updateEmail(email)
+                            currentUser?.updatePassword(pass)
+                            binding.btnActInfo.isEnabled = true
+
+                            Snackbar.make(
+                                binding.root,
+                                "Has actualizado tus datos",
+                                Snackbar.LENGTH_LONG
+                            ).show()
+                        }
+                } else {
+                    Snackbar.make(binding.root,"Debes rellenar todos los campos", Snackbar.LENGTH_LONG).show()
+                }
             }
+
+            binding.btnGoal.setOnClickListener {
+                // Navegamos a la pantalla de goal
+                val i = Intent(binding.root.context,GoalActivity::class.java)
+                i.putExtra("act",true)
+                startActivity(i)
+            }
+
         }
 
-        //instanciamos el recycler view
+
 
 
 
     }
+
 
 
 }

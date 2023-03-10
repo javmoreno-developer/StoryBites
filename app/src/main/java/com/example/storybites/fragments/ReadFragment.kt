@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.example.storybites.R
 import com.example.storybites.databinding.FragmentReadBinding
 
@@ -34,7 +36,16 @@ private lateinit var binding: FragmentReadBinding
         // sobrescribimos los datos
         with(binding) {
             editCore.setText(book?.content ?: "")
+
+            Glide.with(binding.root).load(book?.photo).into(binding.imageRead)
+
+            // arrow back
+            arrowBack.setOnClickListener {
+                findNavController().navigate(R.id.action_readFragment_to_mainFragment)
+            }
         }
+
+
     }
 
 }

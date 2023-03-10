@@ -33,19 +33,18 @@
     </LinearLayout>
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@+id/main_fragment_first_layer"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="30dp"
         android:id="@+id/main_fragment_author_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:fontFamily="@font/source_sans_pro"
-        android:textSize="22sp"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
-        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/source_sans_pro"
         android:text="@string/main_fragment_books_msg"
-        />
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_fragment_first_layer" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_fragment_rv_first"
@@ -71,6 +70,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top|right"
             android:layout_margin="16dp"
+            app:backgroundTint="@color/green"
+
+
             app:srcCompat="@drawable/add"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

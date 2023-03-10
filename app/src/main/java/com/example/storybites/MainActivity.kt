@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
         if (supportActionBar != null) {
             supportActionBar!!.hide()
         }

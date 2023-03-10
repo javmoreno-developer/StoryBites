@@ -7,12 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.storybites.databinding.CeldaMainFirstBinding
 import com.example.storybites.objects.Book
+import com.example.storybites.objects.Goal
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class CardMainAdapter(val lista: MutableList<Book>): RecyclerView.Adapter<CardMainAdapter.BookViewHolder>(){
+class CardMainAdapter(val lista: MutableList<Book>,val goals: MutableList<String>): RecyclerView.Adapter<CardMainAdapter.BookViewHolder>(){
 
 
 
@@ -33,8 +35,15 @@ class CardMainAdapter(val lista: MutableList<Book>): RecyclerView.Adapter<CardMa
 
                 if(book.uid != uid!!) imgHolder.visibility = View.GONE
 
+                if(!goals.contains(book.goalId)) imgGoalHolder.visibility = View.GONE
+
+
                 cardTitle.setText(book.title)
                 cardContainer.setOnClickListener {onItemClickListener(adapterPosition) }
+                //ponemos imagen
+                if(book.photo != "") {
+                    Glide.with(binding.root).load(book.photo).into(binding.backCard)
+                }
             }
         }
     }

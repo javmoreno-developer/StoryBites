@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:backgroundTint="@null"
-        app:strokeColor="#DA2626"
+
         app:strokeWidth="10dp"
         />
 

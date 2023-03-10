@@ -22,16 +22,36 @@
        />
 
    <TextView
+       android:id="@+id/tut_first_msg"
        android:layout_width="350dp"
        android:layout_height="wrap_content"
+
+       android:layout_marginTop="100dp"
+       android:fontFamily="@font/source_sans_pro"
        android:text="@string/tut_first_msg"
        android:textColor="@color/white"
        android:textSize="20sp"
+       app:layout_constraintEnd_toEndOf="parent"
+       android:layout_marginStart="20dp"
+       app:layout_constraintHorizontal_bias="0.76"
+       app:layout_constraintStart_toStartOf="parent"
+
+       app:layout_constraintTop_toBottomOf="@id/tut_first_title" />
+
+   <TextView
+       android:id="@+id/tut_first_msg_2"
+       android:layout_width="350dp"
+       android:layout_height="wrap_content"
+       android:text="@string/tut_first_msg_2"
+       android:textColor="@color/white"
+       android:textSize="20sp"
        android:layout_marginTop="100dp"
+       android:layout_marginStart="20dp"
+       app:layout_constraintHorizontal_bias="0.76"
        android:fontFamily="@font/source_sans_pro"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/tut_first_title"
+       app:layout_constraintTop_toBottomOf="@id/tut_first_msg"
 
        />
 

@@ -98,6 +98,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pass_login_TextInput"
             android:layout_width="match_parent"
+            android:inputType="textPassword"
             android:textColor="@color/gray"
             android:layout_height="wrap_content" />
 
@@ -118,6 +119,8 @@
         android:background="@drawable/corner_btn"
 
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
     <Button
         android:id="@+id/btn_outSignUp"

@@ -1,7 +1,6 @@
 package com.example.storybites.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,10 +11,12 @@ import com.example.storybites.databinding.FragmentSignInBinding
 import com.example.storybites.databinding.FragmentSignUpBinding
 import com.example.storybites.objects.Goal
 import com.example.storybites.objects.User
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_sign_in.*
 
 class SignUpFragment : Fragment() {
 
@@ -55,10 +56,10 @@ class SignUpFragment : Fragment() {
                 var email = userLoginTextInput.text.toString()
                 var pass = passLoginTextInput.text.toString()
                 var name = nameLoginTextInput.text.toString()
-                Log.i("XXX","registrar pulsado")
 
                 var user: User = User("",name,email, pass,null)
 
+                it.isEnabled = false;
                 Firebase.auth.createUserWithEmailAndPassword(email,pass)
                     .addOnSuccessListener {
                         val userCreated = FirebaseAuth.getInstance().currentUser
@@ -74,14 +75,15 @@ class SignUpFragment : Fragment() {
                                     db.collection("user").document(uid).set(
                                         hashUser(name, email, uid, idToken, mutableListOf())
                                     )
+                                    binding.btnGetRegister.isEnabled = true
                                     findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToSignInFragment(user))
                                 }
                             }
                     }
                     .addOnFailureListener {
-                        Log.i("AAA","Failure")
+                        Snackbar.make(binding.root,"Fallo en el registro", Snackbar.LENGTH_LONG).show()
+                        binding.btnGetRegister.isEnabled = true
                     }
-                Log.i("XXX2",user.uid)
 
             }
 

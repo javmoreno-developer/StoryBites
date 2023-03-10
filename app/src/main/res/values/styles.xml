@@ -19,7 +19,16 @@
         <item name="cornerSize">8dp</item>
     </style>
 
+    <style name="MyBottomNavigation">
+        <item name="android:background">@color/black</item>
+        <item name="itemBackground">@color/bottom_navigation_bg</item>
+        <item name="itemIconTint">@color/bottom_navigation_selector</item>
+        <item name="itemTextColor">@color/white</item>
+    </style>
 
+    <style name="btnColorSecondary">
+        <item name="android:background">@color/black</item>
+    </style>
 
 
 </resources>

@@ -11,17 +11,19 @@ import com.example.storybites.databinding.GoalBinding
 import com.example.storybites.objects.Goal
 import kotlin.random.Random
 
-class GoalAdapter(val lista: MutableList<Goal>): Adapter<GoalAdapter.GoalViewHolder>(){
+class GoalAdapter(val lista: MutableList<Goal>,val userGoal: MutableList<String>): Adapter<GoalAdapter.GoalViewHolder>(){
 
     private var colorList: MutableList<String> = mutableListOf("#F3DE8A","#EB9486","#7E7F9A","#1CBC60")
 
 
     //click listener
-    private var onItemClickListener: (Int) -> Unit = {}
+    private var onItemClickListener: (String,Boolean) -> Unit = { s: String, b: Boolean -> }
 
-    fun setOnItemClickListener(listener: (Int)->Unit) {
+    fun setOnItemClickListener(listener: (String,Boolean)->Unit) {
         this.onItemClickListener = listener
     }
+
+    private var added: Boolean = false;
 
     // contenedor
     inner class GoalViewHolder(val binding: GoalBinding) : ViewHolder(binding.root) {
@@ -37,17 +39,29 @@ class GoalAdapter(val lista: MutableList<Goal>): Adapter<GoalAdapter.GoalViewHol
 
                 btnGoal.backgroundTintList = ColorStateList.valueOf(Color.parseColor(color))
 
+                if(userGoal.contains(goal.gid)) {
+                    btnGoal.backgroundTintList = null
+                    Log.i("xxx","marcado bitch")
+                } else {
+                    added = false
+                }
+
                 // asignamos el listener el boton
                 btnGoal.setOnClickListener {
-                    onItemClickListener(adapterPosition)
-                    //btnGoal.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#009FFD"))
+                    if(userGoal.contains(goal.gid)) {
+                        added = true
+                        userGoal.remove(goal.gid)
+                        Log.i("xxx","marcado bitch")
+                    } else {
+                        added = false
+                    }
+                    onItemClickListener(lista[adapterPosition].gid,added)
                     if(btnGoal.backgroundTintList == null) {
                         btnGoal.backgroundTintList = ColorStateList.valueOf(Color.parseColor(color))
                     } else {
                         btnGoal.backgroundTintList = null
                     }
-                    Log.i("XXX",btnGoal.background.toString());
-                    Log.i("XXX",btnGoal.backgroundTintList.toString());
+
                 }
             }
         }

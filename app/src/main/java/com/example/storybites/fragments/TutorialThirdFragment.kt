@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
+import com.example.storybites.BeginActivity
 import com.example.storybites.GoalActivity
 import com.example.storybites.R
 import com.example.storybites.databinding.FragmentTutorialThirdBinding
@@ -31,7 +32,7 @@ class TutorialThirdFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         binding.btnGetStarted.setOnClickListener {
-            val i = Intent(it.context,GoalActivity::class.java)
+            val i = Intent(it.context,BeginActivity::class.java)
             startActivity(i)
         }
     }

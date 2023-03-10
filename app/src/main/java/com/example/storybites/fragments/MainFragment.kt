@@ -15,6 +15,7 @@ import com.example.storybites.adapters.CardMainAdapter
 import com.example.storybites.databinding.FragmentMainBinding
 import com.example.storybites.objects.Book
 import com.example.storybites.objects.User
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -25,6 +26,7 @@ class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
     private lateinit var db: FirebaseFirestore
     private lateinit var adapter: CardMainAdapter
+    private lateinit var UserGoals: MutableList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +39,7 @@ class MainFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(inflater,container,false)
+
         return binding.root
     }
 
@@ -45,7 +48,7 @@ class MainFragment : Fragment() {
 
         with(binding) {
             floatingActionButton.setOnClickListener {
-                var book = Book("","","","",0,0,"","","",)
+                var book = Book("","","","",0,"","","")
                 binding.root.findNavController().navigate(MainFragmentDirections.actionMainFragmentToCoreFragment(book))
 
             }
@@ -58,7 +61,6 @@ class MainFragment : Fragment() {
 
 
         if (currentUser != null) {
-            Log.i("XXX",currentUser.uid)
 
             // obtenemos el documento del usuario logueado
             var user: User = User("","","","",null);
@@ -71,13 +73,14 @@ class MainFragment : Fragment() {
                         var name = it.get("name") as String
                         var goals = it.get("goals") as MutableList<String>
                         user = User(uid, name, email, "", goals)
-                        Log.i("XXX", user.name!!)
 
+                        UserGoals = goals
+                        binding.mainFragmentGreeting.text = resources.getString(R.string.main_fragment_greeting,name)
                         listBooks()
                     }
                 }
                 .addOnFailureListener {
-                    Log.i("XXX","Error en la lectura del documento del usuario logueado")
+                    Snackbar.make(binding.root,"Error en la lectura del documento del usuario logueado",Snackbar.LENGTH_LONG).show()
                 }
         }
 
@@ -99,13 +102,19 @@ class MainFragment : Fragment() {
 
                     }
 
-                    adapter = CardMainAdapter(lista)
+
+
+
+                    adapter = CardMainAdapter(lista,UserGoals)
                     adapter.setOnItemClickListener {
                         var book = lista[it]
                         findNavController().navigate(MainFragmentDirections.actionMainFragmentToDetailBookFragment(book))
                     }
                     mainFragmentRvFirst.adapter = adapter
                     mainFragmentRvFirst.layoutManager= GridLayoutManager(binding.root.context,2)
+                }
+                .addOnFailureListener {
+                    Snackbar.make(binding.root,"Error en la lecutra de libros",Snackbar.LENGTH_LONG).show()
                 }
 
 

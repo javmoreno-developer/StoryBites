@@ -14,18 +14,28 @@
     <string name="goal_title">Escoge los temas</string>
     <string name="tut_first_title">¿Que es Story Bites?</string>
     <string name="tut_first_msg">Story bites es una app con la que leer y escribir breves historias</string>
-    <string name="tut_second_title">¿Que puedo hacer con Story Bites?</string>
-    <string name="tut_second_msg">Con Story Bites podrás leer y escribir breves historias</string>
+    <string name="tut_first_msg_2">Con Story bites descubrirás historias escritas por los usuarios a la par que tu también podrás escribir las tuyas</string>
+    <string name="tut_second_title">¿Como podre encontrar </string>
+    <string name="tut_second_title_2">historias que me gusten? </string>
+    <string name="tut_second_msg">Tras registrarte deberás elegir una serie de tematicas que servirán para detectar que libros coinciden con las mismas</string>
+    <string name="tut_second_msg_2">Estas mismas tematicas te ayudarán a que ciertos usuarios lean tus historias</string>
     <string name="tut_third_title">¿Como puedo empezar?</string>
-    <string name="tut_third_msg">Puedes empezar elegiendo tus gustos</string>
+    <string name="tut_third_msg">Puedes empezar registrandote</string>
+    <string name="tut_third_msg_2">Tras esto podrás elegir tus gustos y con esto terminado tendras la opcion de leer o crear historias</string>
     <string name="main_fragment_greeting">Bienvenido %s</string>
     <string name="main_fragment_books_msg">Libros que quizás te interesen</string>
     <string name="menu_settings">Ajustes</string>
     <string name="menu_home">Home</string>
-    <string name="settings_btn_act">Actualizar info</string>
-    <string name="settings_btn_goals">Cambiar gustos</string>
+    <string name="menu_fav">Favoritos</string>
+    <string name="settings_btn_act">Actualizar</string>
+    <string name="settings_btn_goals">Act. gustos</string>
     <string name="settings_btn_account">Eliminar cuenta</string>
     <string name="detail_btn">Quiero leerlo</string>
+
+    <string name="sign_in_button">Sign In</string>
+    <string name="sign_up_button">Sign Up</string>
+    <string name="confirm_button">Confirm</string>
+    <string name="cancel_button">Cancel</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

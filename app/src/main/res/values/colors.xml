@@ -9,6 +9,7 @@
 
     <color name="background">#272838</color>
     <color name="yellow">#F3DE8A</color>
+    <color name="yellow_dark">#EFC210</color>
     <color name="green_variant">#42C178</color>
     <color name="red">#EB9486</color>
     <color name="gray">#7E7F9A</color>

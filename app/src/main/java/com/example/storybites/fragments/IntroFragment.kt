@@ -36,8 +36,7 @@ class IntroFragment : Fragment() {
         // vamos al fragmento sign in
         binding.btnGetStarted.setOnClickListener {
             findNavController().navigate(IntroFragmentDirections.actionIntroFragmentToSignInFragment(null))
-            /*val i = Intent(it.rootView.context,MainActivity::class.java);
-            startActivity(i)*/
+
         }
 
         // vamos al tutorial

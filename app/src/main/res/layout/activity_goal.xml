@@ -8,13 +8,26 @@
     tools:context=".GoalActivity">
 
     <ImageView
+        android:id="@+id/arrow_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/arrow"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
         android:id="@+id/btn_goal_close"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:src="@drawable/done"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
         app:tint="@color/gray" />
 
     <TextView
@@ -24,7 +37,7 @@
         android:text="@string/goal_title"
         android:textColor="@color/white"
         android:textSize="30sp"
-
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/source_sans_pro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

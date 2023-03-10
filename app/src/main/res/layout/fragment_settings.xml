@@ -7,6 +7,8 @@
     android:background="@color/background"
     tools:context=".fragments.SettingsFragment">
 
+
+
     <ImageView
         android:id="@+id/imageSettings"
         android:layout_width="100dp"
@@ -18,17 +20,18 @@
         android:layout_margin="20dp"
         app:tint="@color/white" />
 
+
     <TextView
         android:id="@+id/titleSettings"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/menu_settings"
         android:textColor="@color/white"
-        android:layout_marginTop="20dp"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageSettings"
-        android:layout_height="wrap_content"/>
+
+        app:layout_constraintTop_toBottomOf="@+id/imageSettings" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/name_settings_TextField"
@@ -99,6 +102,7 @@
             android:id="@+id/pass_settings_TextInput"
             android:layout_width="match_parent"
             android:textColor="@color/gray"
+            android:inputType="textPassword"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -120,40 +124,51 @@
         app:layout_constraintStart_toStartOf="parent"
          />
 
-    <Button
-        android:id="@+id/btn_act_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        android:background="@drawable/corner_btn"
-        android:fontFamily="@font/source_sans_pro"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:layout_marginTop="20dp"
-        android:text="@string/settings_btn_act"
-
-        app:layout_constraintEnd_toEndOf="parent"
-
+        app:layout_constraintTop_toBottomOf="@+id/btn_account"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_account" />
-
-    <Button
-        android:id="@+id/btn_goal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/corner_btn"
-        android:fontFamily="@font/source_sans_pro"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
+        android:orientation="horizontal">
 
-        android:layout_marginTop="20dp"
-        android:text="@string/settings_btn_goals"
+        <Button
+            android:id="@+id/btn_act_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+            android:background="@drawable/corner_btn"
+            android:fontFamily="@font/source_sans_pro"
+
+            android:text="@string/settings_btn_act"
+            android:layout_weight="1"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+             />
 
 
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_act_info" />
+        <Button
+            android:id="@+id/btn_goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/corner_btn"
+            android:backgroundTint="@color/yellow"
+            style="@style/btnColorSecondary"
+            android:fontFamily="@font/source_sans_pro"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+
+            android:layout_marginTop="20dp"
+            android:text="@string/settings_btn_goals"/>
+
+
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
