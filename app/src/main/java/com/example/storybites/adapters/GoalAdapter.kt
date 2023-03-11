@@ -2,7 +2,6 @@ package com.example.storybites.adapters
 
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
@@ -13,7 +12,7 @@ import kotlin.random.Random
 
 class GoalAdapter(val lista: MutableList<Goal>,val userGoal: MutableList<String>): Adapter<GoalAdapter.GoalViewHolder>(){
 
-    private var colorList: MutableList<String> = mutableListOf("#F3DE8A","#EB9486","#7E7F9A","#1CBC60")
+    private var colorList: MutableList<String> = mutableListOf("#18206F","#EB9486","#7E7F9A","#1CBC60","#5C2751")
 
 
     //click listener
@@ -41,7 +40,6 @@ class GoalAdapter(val lista: MutableList<Goal>,val userGoal: MutableList<String>
 
                 if(userGoal.contains(goal.gid)) {
                     btnGoal.backgroundTintList = null
-                    Log.i("xxx","marcado bitch")
                 } else {
                     added = false
                 }
@@ -51,7 +49,6 @@ class GoalAdapter(val lista: MutableList<Goal>,val userGoal: MutableList<String>
                     if(userGoal.contains(goal.gid)) {
                         added = true
                         userGoal.remove(goal.gid)
-                        Log.i("xxx","marcado bitch")
                     } else {
                         added = false
                     }

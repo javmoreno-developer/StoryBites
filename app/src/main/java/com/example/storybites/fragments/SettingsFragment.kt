@@ -37,7 +37,7 @@ class SettingsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentSettingsBinding.inflate(inflater,container,false)
         return binding.root
@@ -77,7 +77,7 @@ class SettingsFragment : Fragment() {
                     }
                 }
                 .addOnFailureListener {
-                    Snackbar.make(binding.root,"Error en la lectura del documento del usuario logueado",Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(binding.root,R.string.main_user_error,Snackbar.LENGTH_LONG).show()
                 }
         }
 
@@ -130,12 +130,12 @@ class SettingsFragment : Fragment() {
 
                             Snackbar.make(
                                 binding.root,
-                                "Has actualizado tus datos",
+                                getString(R.string.settings_snack),
                                 Snackbar.LENGTH_LONG
                             ).show()
                         }
                 } else {
-                    Snackbar.make(binding.root,"Debes rellenar todos los campos", Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(binding.root,getString(R.string.settings_dialog_err), Snackbar.LENGTH_LONG).show()
                 }
             }
 

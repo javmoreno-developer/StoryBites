@@ -83,7 +83,7 @@ class SignInFragment : Fragment() {
                         }
                     }
                     .addOnFailureListener {
-                        Snackbar.make(binding.root,"Fallo en el registro", Snackbar.LENGTH_LONG).show()
+                        Snackbar.make(binding.root,getString(R.string.sigin_err), Snackbar.LENGTH_LONG).show()
                         binding.btnGetStarted.isEnabled = true
                     }
 

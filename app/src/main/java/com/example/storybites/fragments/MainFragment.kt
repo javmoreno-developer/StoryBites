@@ -80,7 +80,7 @@ class MainFragment : Fragment() {
                     }
                 }
                 .addOnFailureListener {
-                    Snackbar.make(binding.root,"Error en la lectura del documento del usuario logueado",Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(binding.root,R.string.main_user_error,Snackbar.LENGTH_LONG).show()
                 }
         }
 
@@ -114,7 +114,7 @@ class MainFragment : Fragment() {
                     mainFragmentRvFirst.layoutManager= GridLayoutManager(binding.root.context,2)
                 }
                 .addOnFailureListener {
-                    Snackbar.make(binding.root,"Error en la lecutra de libros",Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(binding.root,R.string.main_user_error,Snackbar.LENGTH_LONG).show()
                 }
 
 

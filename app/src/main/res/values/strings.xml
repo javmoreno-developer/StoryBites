@@ -37,6 +37,33 @@
     <string name="confirm_button">Confirm</string>
     <string name="cancel_button">Cancel</string>
 
+    <string name="core_title_dialog">Guardar historia</string>
+    <string name="general_no">No</string>
+    <string name="core_title_act_dialog">Actualizar historia</string>
+    <string name="general_yes">Si</string>
+    <string name="core_act_error">Fallo al actualizar</string>
+    <string name="core_dialog_fail">Faltan datos por rellenar</string>
+    <string name="general_accept">Aceptar</string>
+    <string name="detail_by">por</string>
+    <string name="detail_del_dialog">¿Quieres borrar la historia?</string>
+    <string name="detail_del_error">Error al borrar la historia</string>
+    <string name="main_user_error">Error en la lectura del documento del usuario logueado</string>
+    <string name="main_book_error">Error en la lectura de libros</string>
+    <string name="settings_snack">Has actualizado tus datos</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings_dialog_err">Debes rellenar todos los campos</string>
+    <string name="sigin_err">Fallo en el registro</string>
+    <string name="texto_de_ej">texto de ej</string>
+    <string name="decripcion_input">Decripcion</string>
+    <string name="duracion_min_input">Duracion (min)</string>
+    <string name="titulo_input">Titulo</string>
+    <string name="content_input">Content</string>
+    <string name="fragment_content_ej">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit tellus a urna dictum, et iaculisrisus placerat.</string>
+    <string name="fragment_del_btn">Quiero borrar el libro</string>
+    <string name="fragment_title_ej">book 1 by H.P. Lovecraft</string>
+    <string name="fragment_goal_ej">mystery</string>
+    <string name="fragment_dur_ej">12 min</string>
 </resources>

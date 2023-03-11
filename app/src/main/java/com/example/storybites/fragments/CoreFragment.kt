@@ -15,6 +15,7 @@ import com.example.storybites.R
 import com.example.storybites.databinding.FragmentCoreBinding
 import com.example.storybites.objects.Book
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -134,11 +135,11 @@ class CoreFragment : Fragment() {
     }
     private fun showdialog(desc: String, dur: Long, title: String, goal: String, content: String) {
         MaterialAlertDialogBuilder(binding.root.context)
-            .setTitle("Guardar historia")
-            .setNegativeButton("No") { _, _ ->
+            .setTitle(R.string.core_title_dialog)
+            .setNegativeButton(R.string.general_no) { _, _ ->
                 // Respond to negative button press
             }
-            .setPositiveButton("Si") { _, _ ->
+            .setPositiveButton(R.string.general_yes) { _, _ ->
                 // Respond to positive button press
                 with(binding) {
 
@@ -160,11 +161,11 @@ class CoreFragment : Fragment() {
 
     fun showdialogAct(docId: String,desc: String,dur: Long,title: String,goal: String,content: String) {
         MaterialAlertDialogBuilder(binding.root.context)
-            .setTitle("Actualizar historia")
-            .setNegativeButton("No") { dialog, which ->
+            .setTitle(R.string.core_title_act_dialog)
+            .setNegativeButton(R.string.general_no) { dialog, which ->
                 // Respond to negative button press
             }
-            .setPositiveButton("Si") { dialog, which ->
+            .setPositiveButton(R.string.general_yes) { dialog, which ->
                 // Respond to positive button press
                 with(binding) {
 
@@ -176,11 +177,10 @@ class CoreFragment : Fragment() {
 
                     db.collection("book").document(docId).set(book)
                         .addOnSuccessListener {
-                            print("actualizado")
                             findNavController().navigate(R.id.action_coreFragment_to_mainFragment)
                         }
                         .addOnFailureListener {
-                            print("fail")
+                            Snackbar.make(binding.root,R.string.core_act_error,Snackbar.LENGTH_LONG).show()
                         }
 
                 }
@@ -223,8 +223,8 @@ class CoreFragment : Fragment() {
     }
     fun showDialogFail() {
         MaterialAlertDialogBuilder(binding.root.context)
-            .setTitle("Faltan datos por rellenar")
-            .setPositiveButton("Aceptar") { dialog, which -> }
+            .setTitle(R.string.core_dialog_fail)
+            .setPositiveButton(R.string.general_accept) { dialog, which -> }
             .show()
     }
 }

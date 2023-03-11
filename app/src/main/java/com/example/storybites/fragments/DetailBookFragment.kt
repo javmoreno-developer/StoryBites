@@ -81,7 +81,7 @@ class DetailBookFragment : Fragment() {
         with(binding) {
             print(book)
             descDetail.setText(book.desc)
-            titleDetail.setText("${book.title} by ${name}")
+            titleDetail.setText(book.title +  " - " + name)
             GoalDetail.setText(goalTitle)
             DurDetail.setText(book.duration.toString() + "min")
 
@@ -107,11 +107,11 @@ class DetailBookFragment : Fragment() {
     }
     fun showDialog(book: Book) {
         MaterialAlertDialogBuilder(binding.root.context)
-            .setTitle("¿Quieres borrar la historia?")
-            .setNegativeButton("No") { dialog, which ->
+            .setTitle(R.string.detail_del_dialog)
+            .setNegativeButton(R.string.general_no) { dialog, which ->
                 // Respond to negative button press
             }
-            .setPositiveButton("Si") { dialog, which ->
+            .setPositiveButton(R.string.general_yes) { dialog, which ->
                 // Respond to positive button press
 
                 db.collection("book").document(book.docId).delete()
@@ -120,7 +120,7 @@ class DetailBookFragment : Fragment() {
                         findNavController().navigate(R.id.action_detailBookFragment_to_mainFragment)
                     }
                     .addOnFailureListener {
-                       Snackbar.make(binding.root,"Error al borrar la historia",Snackbar.LENGTH_LONG).show()
+                       Snackbar.make(binding.root,R.string.detail_del_error,Snackbar.LENGTH_LONG).show()
                     }
 
 

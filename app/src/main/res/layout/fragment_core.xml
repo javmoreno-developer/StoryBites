@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/underline_txt"
-            android:hint="Decripcion"
+            android:hint="@string/decripcion_input"
             android:textColorHint="@color/gray"
 
             app:boxStrokeColor="@drawable/input"
@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/underline_txt"
-            android:hint="Duracion (min)"
+            android:hint="@string/duracion_min_input"
             android:textColorHint="@color/gray"
 
             app:boxStrokeColor="@drawable/input"
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/underline_txt"
-            android:hint="Titulo"
+            android:hint="@string/titulo_input"
             android:textColorHint="@color/gray"
 
             app:boxStrokeColor="@drawable/input"
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/underline_txt"
-            android:hint="Content"
+            android:hint="@string/content_input"
             android:textColorHint="@color/gray"
 
             app:boxStrokeColor="@drawable/input"

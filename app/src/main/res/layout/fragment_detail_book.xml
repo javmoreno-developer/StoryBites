@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.7"
-            android:text="12 min"
+            android:text="@string/fragment_dur_ej"
             android:textColor="@color/white"
             android:textSize="20sp" />
     </LinearLayout>
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:text="mystery"
+            android:text="@string/fragment_goal_ej"
             android:textColor="@color/white"
             android:textSize="20sp" />
     </LinearLayout>
@@ -98,7 +98,7 @@
 
         android:id="@+id/titleDetail"
         android:layout_width="wrap_content"
-        android:text="book 1 by H.P. Lovecraft "
+        android:text="@string/fragment_title_ej"
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:textColor="@color/white"
@@ -120,7 +120,7 @@
         <TextView
             android:id="@+id/descDetail"
             android:layout_width="wrap_content"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit tellus a urna dictum, et iaculisrisus placerat. "
+            android:text="@string/fragment_content_ej"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="@color/white"
@@ -159,7 +159,7 @@
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         android:visibility="gone"
-        android:text="Quiero borrar el libro"
+        android:text="@string/fragment_del_btn"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
