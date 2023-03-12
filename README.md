@@ -26,7 +26,6 @@ git clone <url>
 
 ## Links of interest 📖
 [Story Bites's Figma](https://www.figma.com/file/YYROt9CAP2ckDrQdUL6oVs/Story-Bytes?node-id=0%3A1&t=7kICtmkWzEqKBpqY-0) ✒️\
-[Project presentation](https://youtu.be/-Z_BUy1Q3tY) 💯
 
 ## Authors
 
